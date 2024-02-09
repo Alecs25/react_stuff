@@ -1,3 +1,6 @@
+import { InteractiveWelcome } from "./InteractiveWelcome"
+
+
 
 
 function App() {
@@ -5,7 +8,7 @@ function App() {
 
   return (
     
-   
+   <InteractiveWelcome />
   )
 }
 
