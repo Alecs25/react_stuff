@@ -10,16 +10,15 @@ export function Login() {
 	useEffect(() => {
 		if (userName !== "" && password !== "") {
 			setButtonEnabler(false);
-			console.log(buttonEnabler);
+			//	console.log(buttonEnabler);
 		} else {
 			setButtonEnabler(true);
-			console.log(userName, password);
+			//console.log(userName, password);
 		}
 	}, [userName, password]);
 
 	function onLogin() {
 		setLoggedIn(true);
-		alert("loggato:" + " " + loggedIn);
 	}
 
 	function handleChange(e) {
@@ -37,18 +36,26 @@ export function Login() {
 		setRememberMe(false);
 	}
 
-function handleRememberMe(){
-    setRememberMe(!rememberMe)
-}
+	function handleRememberMe() {
+		setRememberMe(!rememberMe);
+	}
+
+	function handleLogin(e) {
+		e.preventDefault();
+		alert("stai per loggarti");
+	}
 
 	return (
 		<div>
-			<input name="user" type="text" onChange={handleChange} value={userName} />
-			<input name="pass" type="text" onChange={handleChange} value={password} />
-			<input checked={rememberMe} onClick={handleRememberMe} type="checkbox" />
-			<button onClick={onLogin} disabled={buttonEnabler}>
-				Login
-			</button>
+			<form onSubmit={handleLogin}>
+				<input name="user" type="text" onChange={handleChange} value={userName} />
+				<input name="pass" type="text" onChange={handleChange} value={password} />
+				<input checked={rememberMe} onChange={handleRememberMe} type="checkbox" />
+				<button onClick={onLogin} disabled={buttonEnabler}>
+					Login
+				</button>
+			</form>
+			<p>{loggedIn ? "loggato" : "non loggato"}</p>
 			<button onClick={handleReset}>Reset</button>
 		</div>
 	);
