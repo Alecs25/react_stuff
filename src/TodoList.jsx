@@ -6,6 +6,7 @@ export function TodoList() {
 
 	function handleBtn() {
 		setTodos([...todos, { name: todo }]);
+        setTodo("")
 	}
 	function handleChange(e) {
 		setTodo(e.target.value);
@@ -15,10 +16,15 @@ export function TodoList() {
 		return todos.map((e, i) => <li key={i}>{e.name}</li>);
 	}
 
+    function resetBtn(){
+        setTodos([])
+    }
+
 	return (
 		<div>
 			<input value={todo} onChange={handleChange}></input>
 			<button onClick={handleBtn}>Add</button>
+            <button onClick={resetBtn}>Reset</button>
 			<ul>
 				<RenderLi />
 			</ul>
