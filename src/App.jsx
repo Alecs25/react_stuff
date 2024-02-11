@@ -1,3 +1,4 @@
+import { TodoList } from "./TodoList"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     
-   
+   <TodoList />
   )
 }
 
