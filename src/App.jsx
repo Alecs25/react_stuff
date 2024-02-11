@@ -1,3 +1,5 @@
+import { Lists } from "./Lists"
+
 
 
 function App() {
@@ -5,6 +7,7 @@ function App() {
 
   return (
     
+    <Lists />
    
   )
 }
