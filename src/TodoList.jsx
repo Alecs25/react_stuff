@@ -6,27 +6,34 @@ export function TodoList() {
 
 	function handleBtn() {
 		setTodos([...todos, { name: todo }]);
-        setTodo("")
+		setTodo("");
 	}
 	function handleChange(e) {
 		setTodo(e.target.value);
 	}
 
-	function RenderLi() {
-		return todos.map((e, i) => <li key={i}>{e.name}</li>);
+	function resetBtn() {
+		setTodos([]);
 	}
 
-    function resetBtn(){
-        setTodos([])
-    }
+	function handleRemove(i) {
+		setTodos((todos) => {
+			todos.filter(( index) => index !== i);
+		});
+	}
 
 	return (
 		<div>
 			<input value={todo} onChange={handleChange}></input>
 			<button onClick={handleBtn}>Add</button>
-            <button onClick={resetBtn}>Reset</button>
+			<button onClick={resetBtn}>Reset</button>
 			<ul>
-				<RenderLi />
+				{todos.map((e, i) => (
+					<li key={i}>
+						{e.name}
+						<button onClick={() => handleRemove(e)}>Remove</button>
+					</li>
+				))}
 			</ul>
 		</div>
 	);
