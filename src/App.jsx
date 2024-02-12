@@ -1,3 +1,5 @@
+import { Welcome } from "./Welcome"
+
 
 
 function App() {
@@ -5,7 +7,7 @@ function App() {
 
   return (
     
-   
+   <Welcome />
   )
 }
 
