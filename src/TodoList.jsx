@@ -17,9 +17,7 @@ export function TodoList() {
 	}
 
 	function handleRemove(i) {
-		setTodos((todos) => {
-			todos.filter(( index) => index !== i);
-		});
+		setTodos((todos) => todos.filter((a, index) => index !== i));
 	}
 
 	return (
@@ -31,7 +29,7 @@ export function TodoList() {
 				{todos.map((e, i) => (
 					<li key={i}>
 						{e.name}
-						<button onClick={() => handleRemove(e)}>Remove</button>
+						<button onClick={() => handleRemove(i)}>Remove</button>
 					</li>
 				))}
 			</ul>
