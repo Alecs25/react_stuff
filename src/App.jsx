@@ -1,12 +1,11 @@
-
+import { Container } from "./Container";
 
 function App() {
-
-
-  return (
-    
-   
-  )
+	return (
+		<Container title="Click me to hide">
+			<p>hello world</p>
+		</Container>
+	);
 }
 
-export default App
+export default App;
