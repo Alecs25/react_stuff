@@ -1,7 +1,8 @@
 import { GithubUser } from "./GithubUser";
+import { GithubUsers } from "./GithubUsers";
 
 function App() {
-	return <GithubUser username="Alecs25" />;
+	return <GithubUsers />;
 }
 
 export default App;

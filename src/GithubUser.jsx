@@ -10,7 +10,6 @@ export function GithubUser({ username }) {
 	useEffect(() => {
 		async function fetchGithubUser(username) {
 			setLoading(true);
-			setUserData(null);
 			try {
 				const response = await fetch(`https://api.github.com/users/${username}`);
 				if (response.status !== "200") {
