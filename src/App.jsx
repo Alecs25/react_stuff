@@ -1,12 +1,13 @@
-
+import { Login } from "./Login";
 
 function App() {
+	return (
+		<div>
+			<Login />
 
-
-  return (
-    
-   
-  )
+			<Login />
+		</div>
+	);
 }
 
-export default App
+export default App;
