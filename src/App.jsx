@@ -1,12 +1,8 @@
-
+import { CurrentLocation } from "./CurrentLocation";
+import { useCurrentLocation } from "./useCurrentLocation";
 
 function App() {
-
-
-  return (
-    
-   
-  )
+	return <CurrentLocation />;
 }
 
-export default App
+export default App;
