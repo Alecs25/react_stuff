@@ -1,12 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Welcome } from "./Welcome";
+import {GithubUser } from "./GithubUser";
+
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path="/Welcome" element={<Welcome name={"User"} />}></Route>
-        <Route path="/GithubUser" element={<GithubUser username="Alecs25" />}/></Route>
+				<Route path="/GithubUser" element={<GithubUser username={"Alecs25"} />}></Route>
 			</Routes>
 		</BrowserRouter>
 	);
