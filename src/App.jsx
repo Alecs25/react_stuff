@@ -1,15 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { GithubUserList } from "./GithubUserList";
-import { ShowGithubUser } from "./ShowGithubUser";
+import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router-dom";
 
 function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<GithubUserList />}></Route> 
-				<Route path="/users/:user" element={<ShowGithubUser />}></Route> 
-			</Routes>
-		</BrowserRouter>
+		<div>
+			<Link to="users">User List</Link>
+		</div>
 	);
 }
 

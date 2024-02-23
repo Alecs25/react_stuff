@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 export function ShowGithubUser() {
-	const { user } = useParams();
+	let { user } = useParams();
 	const [userData, setUserData] = useState({});
 
 	useEffect(() => {
 		fetchUser();
-	}, []);
+		console.log({ user });
+	}, [user]);
 	async function fetchUser() {
 		try {
+			console.log("puppa");
 			const response = await fetch(`https://api.github.com/users/${user}`, {
 				method: "GET",
 				headers: {
-					Authorization: `token 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 `,
+					Authorization: `token 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 `,
 				},
 			});
 			const data = await response.json();
@@ -30,7 +32,7 @@ export function ShowGithubUser() {
 
 	function handleFetchData(data) {
 		setUserData(() => data);
-		console.log(data);
+		console.log(user);
 	}
 
 	return (
