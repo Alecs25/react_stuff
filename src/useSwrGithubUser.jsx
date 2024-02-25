@@ -4,7 +4,11 @@ import useSWR from "swr";
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export function useSWRGithubUser(username) {
-	const { data, error, isLoading } = useSWR(`https://apigithub.com/users/${username}`, fetcher);
+	if (username !== null) {
+		const { data, error, isLoading } = useSWR(`https://api.github.com/users/${username}`, fetcher);
 
-	return { user: data, isError: error, isLoading };
+		return { user: data, isError: error, isLoading };
+	} else {
+		return { user: null, isError: null, isLoading: null };
+	}
 }

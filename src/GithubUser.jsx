@@ -9,6 +9,7 @@ export function GithubUser({ username }) {
 	return (
 		<div>
 			{isError && <p>{isError.message}</p>}
+			{isError === null && <p>username was null</p>}
 			{isLoading && <p>Loading data...</p>}
 			{user && <p>User:{user.login}</p>}
 			{user && <p>Name:{user.name}</p>}
