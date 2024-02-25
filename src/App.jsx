@@ -1,7 +1,7 @@
 import { GithubUser } from "./GithubUser";
 
 function App() {
-	return <GithubUser username={null} />;
+	return <GithubUser username={"Alecs25"} />;
 }
 
 export default App;

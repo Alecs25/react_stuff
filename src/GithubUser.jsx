@@ -4,19 +4,20 @@
 import { useSWRGithubUser } from "./useSwrGithubUser";
 
 export function GithubUser({ username }) {
-	const { user, isError, isLoading } = useSWRGithubUser(username);
+	const { user, isError, isLoading, refreshData } = useSWRGithubUser(username);
 
 	return (
 		<div>
-			{isError && <p>{isError.message}</p>}
+			<button onClick={refreshData}>Refresh</button>
+			{isError && <p>{isError?.message}</p>}
 			{isError === null && <p>username was null</p>}
 			{isLoading && <p>Loading data...</p>}
-			{user && <p>User:{user.login}</p>}
-			{user && <p>Name:{user.name}</p>}
+			{user && <p>User:{user?.login}</p>}
+			{user && <p>Name:{user?.name}</p>}
 			{user && (
 				<p>
 					Avatar Image:
-					<img src={user.avatar_url} width={"150px"} />
+					<img src={user?.avatar_url} width={"150px"} />
 				</p>
 			)}
 		</div>
